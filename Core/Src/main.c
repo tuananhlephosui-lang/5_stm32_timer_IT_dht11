@@ -96,24 +96,19 @@ void setPinToGPIO_input(GPIO_TypeDef *port, uint16_t pin) {
 
 void DHT11_Start() {
   setPinToGPIO_output(GPIOB, GPIO_PIN_5);
+	
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, 1);
-
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, 0);
-  HAL_Delay(20);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, 0); HAL_Delay(20);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, 1);
 
   setPinToGPIO_input(GPIOB, GPIO_PIN_5);
-  // my_delay_us(50);
 
   // ============================
   // chua co thuat toan check loi
   // ============================
 
   while(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5) == 1) { } // doi = 0
-  // my_delay_us(80);
-
   while(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5) == 0) { } // doi = 1
-  // my_delay_us(80);
-
   while(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5) == 1) { } // doi = 0
 
   // ============================

@@ -158,12 +158,12 @@
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>int_Hum,0x0A</ItemText>
+          <ItemText>float_Tem,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>float_Tem,0x0A</ItemText>
+          <ItemText>int_Hum,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>3</count>

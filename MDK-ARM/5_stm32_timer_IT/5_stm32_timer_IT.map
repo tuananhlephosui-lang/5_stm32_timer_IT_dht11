@@ -667,7 +667,7 @@ Removing Unused input sections from the image.
     Removing main.o(.ARM.exidx.text.setPinToGPIO_output), (8 bytes).
     Removing main.o(.text.setPinToGPIO_input), (26 bytes).
     Removing main.o(.ARM.exidx.text.setPinToGPIO_input), (8 bytes).
-    Removing main.o(.text.DHT11_Start), (120 bytes).
+    Removing main.o(.text.DHT11_Start), (128 bytes).
     Removing main.o(.ARM.exidx.text.DHT11_Start), (8 bytes).
     Removing main.o(.ARM.exidx.text.DHT11_Read_byte), (8 bytes).
     Removing main.o(.text.DHT11_Handler), (46 bytes).
@@ -1252,7 +1252,7 @@ Removing Unused input sections from the image.
     Removing system_stm32f1xx.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing system_stm32f1xx.o(.rodata.APBPrescTable), (8 bytes).
 
-591 unused section(s) (total 31432 bytes) removed from the image.
+591 unused section(s) (total 31440 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1421,10 +1421,10 @@ Image Symbol Table
     [Anonymous Symbol]                       0x080012f0   Section        0  system_stm32f1xx.o(.text.SystemInit)
     [Anonymous Symbol]                       0x080012f4   Section        0  stm32f1xx_it.o(.text.UsageFault_Handler)
     [Anonymous Symbol]                       0x080012f8   Section        0  main.o(.text.main)
-    HAL_RCC_GetSysClockFreq.aPredivFactorTable 0x080014e0   Data           2  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
-    [Anonymous Symbol]                       0x080014e0   Section        0  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
-    HAL_RCC_GetSysClockFreq.aPLLMULFactorTable 0x080014e2   Data          16  stm32f1xx_hal_rcc.o(.rodata.cst16)
-    [Anonymous Symbol]                       0x080014e2   Section        0  stm32f1xx_hal_rcc.o(.rodata.cst16)
+    HAL_RCC_GetSysClockFreq.aPredivFactorTable 0x080014e8   Data           2  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
+    [Anonymous Symbol]                       0x080014e8   Section        0  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
+    HAL_RCC_GetSysClockFreq.aPLLMULFactorTable 0x080014ea   Data          16  stm32f1xx_hal_rcc.o(.rodata.cst16)
+    [Anonymous Symbol]                       0x080014ea   Section        0  stm32f1xx_hal_rcc.o(.rodata.cst16)
     .L_MergedGlobals                         0x20000000   Data           8  stm32f1xx_hal.o(.data..L_MergedGlobals)
     [Anonymous Symbol]                       0x20000000   Section        0  stm32f1xx_hal.o(.data..L_MergedGlobals)
     .bss                                     0x20000010   Section       96  libspace.o(.bss)
@@ -1612,10 +1612,10 @@ Image Symbol Table
     SysTick_Handler                          0x080012ed   Thumb Code     4  stm32f1xx_it.o(.text.SysTick_Handler)
     SystemInit                               0x080012f1   Thumb Code     2  system_stm32f1xx.o(.text.SystemInit)
     UsageFault_Handler                       0x080012f5   Thumb Code     2  stm32f1xx_it.o(.text.UsageFault_Handler)
-    main                                     0x080012f9   Thumb Code   472  main.o(.text.main)
-    AHBPrescTable                            0x080014d0   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
-    Region$$Table$$Base                      0x080014f4   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08001514   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x080012f9   Thumb Code   480  main.o(.text.main)
+    AHBPrescTable                            0x080014d8   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
+    Region$$Table$$Base                      0x080014fc   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800151c   Number         0  anon$$obj.o(Region$$Table)
     uwTickFreq                               0x20000000   Data           1  stm32f1xx_hal.o(.data..L_MergedGlobals)
     uwTickPrio                               0x20000004   Data           4  stm32f1xx_hal.o(.data..L_MergedGlobals)
     SystemCoreClock                          0x20000008   Data           4  system_stm32f1xx.o(.data.SystemCoreClock)
@@ -1637,9 +1637,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001528, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001530, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001514, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000151c, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1757,25 +1757,25 @@ Memory Map of the image
     0x080012f2   0x080012f2   0x00000002   PAD
     0x080012f4   0x080012f4   0x00000002   Code   RO           47    .text.UsageFault_Handler  stm32f1xx_it.o
     0x080012f6   0x080012f6   0x00000002   PAD
-    0x080012f8   0x080012f8   0x000001d8   Code   RO           23    .text.main          main.o
-    0x080014d0   0x080014d0   0x00000010   Data   RO          749    .rodata.AHBPrescTable  system_stm32f1xx.o
-    0x080014e0   0x080014e0   0x00000002   Data   RO          500    .rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable  stm32f1xx_hal_rcc.o
-    0x080014e2   0x080014e2   0x00000010   Data   RO          499    .rodata.cst16       stm32f1xx_hal_rcc.o
-    0x080014f2   0x080014f2   0x00000002   PAD
-    0x080014f4   0x080014f4   0x00000020   Data   RO          926    Region$$Table       anon$$obj.o
+    0x080012f8   0x080012f8   0x000001e0   Code   RO           23    .text.main          main.o
+    0x080014d8   0x080014d8   0x00000010   Data   RO          749    .rodata.AHBPrescTable  system_stm32f1xx.o
+    0x080014e8   0x080014e8   0x00000002   Data   RO          500    .rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable  stm32f1xx_hal_rcc.o
+    0x080014ea   0x080014ea   0x00000010   Data   RO          499    .rodata.cst16       stm32f1xx_hal_rcc.o
+    0x080014fa   0x080014fa   0x00000002   PAD
+    0x080014fc   0x080014fc   0x00000020   Data   RO          926    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001518, Size: 0x000006c8, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001520, Size: 0x000006c8, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08001518   0x00000008   Data   RW          462    .data..L_MergedGlobals  stm32f1xx_hal.o
-    0x20000008   0x08001520   0x00000004   Data   RW          748    .data.SystemCoreClock  system_stm32f1xx.o
-    0x2000000c   0x08001524   0x00000004   PAD
+    0x20000000   0x08001520   0x00000008   Data   RW          462    .data..L_MergedGlobals  stm32f1xx_hal.o
+    0x20000008   0x08001528   0x00000004   Data   RW          748    .data.SystemCoreClock  system_stm32f1xx.o
+    0x2000000c   0x0800152c   0x00000004   PAD
     0x20000010        -       0x00000060   Zero   RW          791    .bss                c_w.l(libspace.o)
     0x20000070        -       0x00000050   Zero   RW           30    .bss..L_MergedGlobals  main.o
     0x200000c0        -       0x00000004   Zero   RW          461    .bss.uwTick         stm32f1xx_hal.o
-    0x200000c4   0x08001524   0x00000004   PAD
+    0x200000c4   0x0800152c   0x00000004   PAD
     0x200000c8        -       0x00000200   Zero   RW            2    HEAP                startup_stm32f103xb.o
     0x200002c8        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103xb.o
 
@@ -1787,7 +1787,7 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      1222          0          0          0         80      10933   main.o
+      1230          0          0          0         80      10957   main.o
         64         26        236          0       1536        800   startup_stm32f103xb.o
        188          0          0          8          4       5795   stm32f1xx_hal.o
        162          0          0          0          0       8450   stm32f1xx_hal_cortex.o
@@ -1800,7 +1800,7 @@ Image component sizes
          2          0         16          4          0       1614   system_stm32f1xx.o
 
     ----------------------------------------------------------------------
-      4768         48        304         12       1628     125848   Object Totals
+      4776         48        304         12       1628     125872   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         44          0          2          0          8          0   (incl. Padding)
 
@@ -1849,15 +1849,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      5092         64        304         12       1724     126212   Grand Totals
-      5092         64        304         12       1724     126212   ELF Image Totals
-      5092         64        304         12          0          0   ROM Totals
+      5100         64        304         12       1724     126236   Grand Totals
+      5100         64        304         12       1724     126236   ELF Image Totals
+      5100         64        304         12          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 5396 (   5.27kB)
+    Total RO  Size (Code + RO Data)                 5404 (   5.28kB)
     Total RW  Size (RW Data + ZI Data)              1736 (   1.70kB)
-    Total ROM Size (Code + RO Data + RW Data)       5408 (   5.28kB)
+    Total ROM Size (Code + RO Data + RW Data)       5416 (   5.29kB)
 
 ==============================================================================
 
